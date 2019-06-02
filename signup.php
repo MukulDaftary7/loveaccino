@@ -22,8 +22,6 @@
 
 	</head>
 	<body>
-<?php include("dbconnection.php"); ?>
-<?php include("insert.php"); ?>
 		<nav class="navbar navbar-default login_nav">
 			<div class="container-fluid">
 				<div class="navbar-header logo">
@@ -47,35 +45,35 @@
 					<img src="images/login-page-img.png" class="img-responsive" alt="love">
 				</div>
 				<div class="signup col-xs-12 col-sm-6 col-md-6 col-lg-6">
-					<form action="index.php" method="POST">
+					<form action="insert.php" method="POST">
 						<div class="row">
 							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							<div class="row">
 							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-								<input type="text" name="firstname" placeholder="Enter Your Name" class="form_field">
+								<input type="text" name="firstname" placeholder="Enter Your Name" class="form_field" required="">
 							</div>
 								<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-								<input type="text" name="lastname" placeholder="Enter Your Surname" class="form_field">
+								<input type="text" name="lastname" placeholder="Enter Your Surname" class="form_field" required="">
 							</div>
 							</div>
 							</div>
 							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-								<input type="text" name="email" placeholder="Enter Your Email" class="e_mail">
+								<input type="text" name="email" placeholder="Enter Your Email" class="e_mail" required="">
 							</div>
 							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							<div class="row">
 							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-								<input type="text" name="password" placeholder="Enter Your Password" class="form_field">
+								<input type="text" name="password" placeholder="Enter Your Password" class="form_field" required="">
 							</div>
 							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-								<input type="text" name="Confirm_password" placeholder="Confirm Password" class="form_field">
+								<input type="text" name="Confirm_password" placeholder="Confirm Password" class="form_field" required="">
 							</div>
 							</div>
 							</div>
 							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							<div class="row">
 								<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-									<input type="tel" name="mobile_no" placeholder="Enter Your Mobile No." class="mobile_no">
+									<input type="tel" name="mobile_no" placeholder="Enter Your Mobile No." class="mobile_no" required="">
 								</div>
 							</div>
 							</div>
@@ -92,7 +90,7 @@
 										</div>
 										<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 											<h3>Country</h3>
-												<select id="country" name="country" autocomplete="country" class="year">
+												<select id="country" name="country" autocomplete="country" class="year" required="">
 													<option value="" selected="selected">Country</option>
 													<option value="AF">Afghanistan</option>
 													<option value="AL">Albania</option>
@@ -380,7 +378,7 @@
 										</div>
 										<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 											<h3>Month</h3>
-										<select class="month" name="month">
+										<select class="month" name="month" required="">
 											<option>January</option>
 											<option>February</option>
 											<option>March</option>
@@ -412,7 +410,7 @@
 								</div>
 								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 									<div class="row">
-									<select class="gender" name="gender">
+									<select class="gender" name="gender" required="">
 										<option value="female" class="gn">Female</option>
 										<option value="male" class="gn">Male</option>
 									</select>
@@ -425,7 +423,7 @@
 								</div>
 								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 									<div class="row">
-									<button type="submit"  class="submit_btn" >Sign Up</button>
+									<button type="submit" name="submit" class="submit_btn" >Sign Up</button>
 									</div>
 							<div class="form-status">
 								<?php echo $status ?>
