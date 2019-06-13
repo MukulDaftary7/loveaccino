@@ -2,8 +2,6 @@
 session_start();
 include("db.php");
 //print_r($_POST);
-
-
 if(isset($_POST['submit']))
 {
 				$user_id = $_SESSION['userid'];

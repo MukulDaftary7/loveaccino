@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPEhtml>
 <html>
 	<head>
@@ -19,7 +16,7 @@
 <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
 
 
-
+<?php include "db.php"; ?>
 	</head>
 	<body>
 		<nav class="navbar navbar-default login_nav">
@@ -82,7 +79,7 @@
 
 										<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 											<h3>City</h3>
-											<input type="text" class="day" id="city" placeholder="city"name="city" required="">
+											<input type="text" class="day" id="city" placeholder="city" name="city" required="">
 										</div>
 										<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 											<h3>State</h3>
@@ -343,54 +340,54 @@
 									<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 										<h3>Day</h3>
 										<select class="day" name="day">
-											 <option>01</option>
-											 <option>02</option>
-											 <option>03</option>
-											 <option>04</option>
-											 <option>05</option>
-											 <option>06</option>
-											 <option>07</option>
-											 <option>08</option>
-											 <option>09</option>
-											 <option>10</option>
-											 <option>11</option>
-											 <option>12</option>
-											 <option>13</option>
-											 <option>14</option>
-											 <option>15</option>
-											 <option>16</option>
-											 <option>17</option>
-											 <option>18</option>
-											 <option>19</option>
-											 <option>20</option>
-											 <option>21</option>
-											 <option>22</option>
-											 <option>23</option>
-											 <option>24</option>
-											 <option>25</option>
-											 <option>26</option>
-											 <option>27</option>
-											 <option>28</option>
-											 <option>29</option>
-											 <option>30</option>
-											 <option>31</option>
+											 <option value="01">01</option>
+											 <option value="02">02</option>
+											 <option value="03">03</option>
+											 <option value="04" >04</option>
+											 <option value="05">05</option>
+											 <option value="06">06</option>
+											 <option value="07">07</option>
+											 <option value="08">08</option>
+											 <option value="09">09</option>
+											 <option value="10">10</option>
+											 <option value="11">11</option>
+											 <option value="12">12</option>
+											 <option value="13">13</option>
+											 <option value="14">14</option>
+											 <option value="15">15</option>
+											 <option value="16">16</option>
+											 <option value="17">17</option>
+											 <option value="18">18</option>
+											 <option value="19">19</option>
+											 <option value="20">20</option>
+											 <option value="21">21</option>
+											 <option value="22">22</option>
+											 <option value="23">23</option>
+											 <option value="24">24</option>
+											 <option value="25">25</option>
+											 <option value="26">26</option>
+											 <option value="27">27</option>
+											 <option value="28">28</option>
+											 <option value="29">29</option>
+											 <option value="30">30</option>
+											 <option value="31">31</option>
 										</select>
 										</div>
 										<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 											<h3>Month</h3>
 										<select class="month" name="month" required="">
-											<option>January</option>
-											<option>February</option>
-											<option>March</option>
-											<option>April</option>
-											<option>May</option>
-											<option>June</option>
-											<option>July</option>
-											<option>August</option>
-											<option>September</option>
-											<option>October</option>
-											<option>November</option>
-											<option>December</option>
+											<option value="1">January</option>
+											<option value="2">February</option>
+											<option value="3">March</option>
+											<option value="4">April</option>
+											<option value="5">May</option>
+											<option value="6">June</option>
+											<option value="7">July</option>
+											<option value="8">August</option>
+											<option value="9">September</option>
+											<option value="10">October</option>
+											<option value="11">November</option>
+											<option value="12">December</option>
 										</select>
 										</div>
 										<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -424,6 +421,7 @@
 								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 									<div class="row">
 									<button type="submit" name="submit" class="submit_btn" >Sign Up</button>
+									<h1><?php notify();?></h1>
 									</div>
 							<div class="form-status">
 								<?php echo $status ?>

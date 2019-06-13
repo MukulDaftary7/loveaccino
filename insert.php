@@ -28,16 +28,6 @@ if(isset($_POST['submit'])){
 														$month = $_POST['month'];
 														$year = $_POST['year'];
 														$gender = $_POST['gender'];
-														$sql2= "SELECT id,email FROM user where email=?";
-														$stmt1 = $conn->prepare($sql2);
-														$stmt1->execute(array($_POST['email']));
-													$rows	= $stmt1->fetchAll();
-													//print_r($rows);
-													if($email != $rows['0']['email'] || $rows['0']['email'] == ''){
-														if($rows['0']['id'] != ""){
-														$_SESSION['userid'] = $rows['0']['id'];
-
-
 														if($password==$Confirm_password){
 															$sql = "INSERT INTO user(firstname,lastname,email,password,mobile_no,
 																city,state,country,day,month,year,gender)VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -45,21 +35,20 @@ if(isset($_POST['submit'])){
 																$pdoExec = $stmt->execute(array($firstname,$lastname,$email,$password,$mobile_no
 																,$city,$state,$country,$day,$month,$year,$gender));
 																if($pdoExec){
+																	$sql1 ="SELECT * from user where email=?";
+																	$stmt1 = $conn->prepare($sql1);
+																	$stmt1->execute(array($email));
+																	$rows = $stmt1->fetchAll();
+																	foreach($rows as $row){
+																		$_SESSION['userid'] = $row['id'];
+																	}
 									          				$_SESSION['message'] = "Registration Successfull";
 																		header('location: create-user-profile1.php');
 																		exit();
-									         				}else{
-									       							$_SESSION['message'] = "data not inserted";
-																			header('location: signup.php');
-																			exit();
-																		}
 																		}else {
 																			$_SESSION['message'] = "password not matched";
 																			header('location: signup.php');
-																			exit();
-																		}
-																		 }
-																		}else $_SESSION['message'] = 'email address already exists';
+																			exit();}
 																		}else $_SESSION['message'] = 'please select gender';
 																	}else  $_SESSION['message'] = 'please select year';
 																}else $_SESSION['message'] = 'please select month';
@@ -73,8 +62,7 @@ if(isset($_POST['submit'])){
 								}else $_SESSION['message'] = 'please enter email';
 							}else  $_SESSION['message'] = "please enter lastname";
 						}else $_SESSION['message'] = "please enter firstname";
-					}else $_SESSION['message'] = "please fill all details";
 
-header('location: signup.php');
-exit();
-?>
+					}else $_SESSION['message'] = "please fill all details";
+				}
+	?>
