@@ -1,5 +1,5 @@
 <p><h3>Some Screenshots</h3></p>
-<div>
+<div style="float:left">
   <img src="https://user-images.githubusercontent.com/50882771/93527449-83aedc00-f956-11ea-826b-8c99c6cc7e97.png" width=300 height=300> 
   </div>
   <div style="float:left;">
